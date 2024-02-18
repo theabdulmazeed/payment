@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open UPI Payment Link</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.chat-bubble {
+    background-color: #c4dcff;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+}
+
+.button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="chat-bubble">Hey there! Want to make a payment?</div>
+    <button class="button" onclick="openUPILink()">Sure, let's go!</button>
+</div>
+
+<script>
+function openUPILink() {
+  var upiLink = "upi://pay?pn=SHAIK%20ABDUL%20MAZEED&pa=addfi.55550114593583@fbl&cu=INR&mode=01&orgid=000000&purpose=00";
+  
+  if (navigator.userAgent.match(/Android/i)) {
+    window.location.href = upiLink;
+  } else {
+    window.location.href = "https://www.example.com/upi_instructions";
+  }
+}
+</script>
+
+</body>
+</html>
